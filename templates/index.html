@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		 <meta charset="utf-8">
+    <!--    keywords-->
+    <meta name="keywords" content="like/dislike count,feedback track,badge, markdown, github, free,happy,unhappy,abhiprojectz,gitrate">
+    <!--    description-->
+    <meta name="description"
+          content="Gitrate Create like/dislike system for your github readme repo, or wherever in static sites for FREE!">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GITRATE by @abhiprojectz || anicode inc.</title>
+		<style type="text/css">
+		body {
+		overflow-x: hidden;
+		}
+		button:hover {
+		background: #48bb78;
+		color: #fff;
+		cursor: pointer;
+		}
+		.sd {
+		animation: slide-in-top 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+		}
+		@keyframes slide-in-top {
+		0% {
+		transform: translateY(-1000px);
+		opacity: 0;
+		}
+		100% {
+		transform: translateY(0);
+		opacity: 1;
+		}
+		}
+		.tilt {
+		animation: tilt 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+		}
+		@keyframes tilt {
+		0% {
+		transform: rotateX(30deg) translateX(300px) skewX(-30deg);
+		opacity: 0;
+		}
+		100% {
+		transform: rotateX(0deg) translateX(0) skewX(0deg);
+		opacity: 1;
+		}
+		}
+		.fade {
+		animation: fade-in 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+		}
+		@keyframes fade-in {
+		0% {
+		opacity: 0;
+		}
+		100% {
+		opacity: 1;
+		}
+		}
+		.zil {
+		animation: zil 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+		}
+		@keyframes zil {
+		0% {
+		transform: rotateY(-20deg) rotateX(-35deg) translate(-300px, 300px) skew(-35deg, 10deg);
+		opacity: 0;
+		}
+		100% {
+		transform: rotateY(0) rotateX(0deg) translate(0, 0) skew(0deg, 0deg);
+		opacity: 1;
+		}
+		}
+		.sl {
+		animation: sl 1s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+		}
+		@keyframes sl {
+		0% {
+		transform: scaleX(2);
+		filter: blur(4px);
+		opacity: 0;
+		}
+		100% {
+		transform: scaleX(1);
+		filter: blur(0px);
+		opacity: 1;
+		}
+		}
+		</style>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='abhicss.min.css') }}">
+	</head>
+	<body class="m-0 p-0 w-screen font-raleway">
+		<div class="sd flex w-max bg-green-500 text-ff shadow-hh">
+			<ul class="flex ul-type-0 w-max">
+				<li><img class="w-80 h-80 ml-20 rounded" src="{{ url_for('static', filename='a.jpg') }}"></li>
+				<li class="m-auto ml-2/4 mr-15"><a class="text-ff a-0" href="https://github.com/abhiprojectz/gitrate">Github</a></li>
+				<li class="m-auto mr-30 ml-auto"><a class="text-ff a-0" href="https://blog.anicode.in/subscribe-us-abhiprojectz-ckhoslhdg04w6efs1gvksd13b">Subscribe</a></li>
+			</ul>
+		</div>
+		<div class="w-max flex-col">
+			<h1 class="ml-30 text-gray-800">Welcome to GIT-Rate!</h1>
+			<p class="ml-30 text-gray-800 mt-10 bold-700">Create a like/Dislike feedback system for your github readme repo!</p>
+			<p class="ml-30 text-gray-800 mt-15 bold-700">Paste your github repo url:</p>
+			<input id='inputparam' placeholder="type url here....." class="tilt w-3/4 m-auto p-20 mt-10 outline-0" style="border:2px solid #495450;" type="text" name="inputparam" required="true" />
+			<button onclick="unhappy()" class="zil text-green-500 p-10 bold-700 mr-30 ml-auto mt-15 bg-ff outline-0 rounded-5 shadow-hh" style="border:1px solid #48bb78;">Unhappy code!</button>
+			<button onclick="happy()" class="zil text-green-500 p-10 bold-700 mr-30 ml-auto mt-15 bg-ff outline-0 rounded-5 shadow-hh" style="border:1px solid #48bb78;">Happy code!</button>
+		</div>
+		<div class="flex-col">
+			<div id='svgs' class="flex m-auto mt-20 mb-40">
+				<img id='hsvgb' class="sl" src="{{ url_for('static', filename='happy.svg') }}">
+				<span class="hidden" id="hsvg"></span>
+				<img id="unhsvgb" class="sl" src="{{ url_for('static', filename='unhappy.svg') }}">
+				<span class="hidden" id="unhsvg"></span>
+			</div>
+			<div id='output' class="hidden fade flex m-auto mt-20 mb-40">
+				<div class="w-1/2 text-ff flex-col p-8 rounded-5 bg-gradient-to-r from-green-900 to-green-500 shadow-hhh">
+					<h3>Happy code:</h3>
+					<input type="text" name="" id="hlink" placeholder="type here....." class="border-0 m-auto m-10 bg-green-300 text-blue-800 p-15" />
+					<button onclick="copy(this.id)" id='tem' class="text-green-500 p-10 bold-700 mr-10 ml-auto mt-15 bg-ff outline-0 rounded-5 shadow-hh" style="border:1px solid #48bb78;">Copy code!</button>
+				</div>
+				<div class="w-1/2 flex-col text-ff flex-col p-8 rounded-5 bg-gradient-to-r from-green-900 to-green-500 ml-10 shadow-hhh">
+					<h4>Unhappy code:</h4>
+					<input type="text" name="" id="unhlink" placeholder="type here........" class="font-raleway border-0 m-auto m-10 bg-green-300 text-red-800  p-15" />
+					<button onclick="copy(this.id)" id='pem' class="text-green-500 p-10 bold-700 mr-10 ml-auto mt-15 bg-ff outline-0 rounded-5 shadow-hh" style="border:1px solid #48bb78;">Copy code!</button>
+				</div>
+			</div>
+			<p class="m-auto text-gray-700">Grab the code, go & paste this in your readme or wherever markdown!</p>
+		</div>
+		<div class="miss ml-20 mr-40">
+			<h1 class="text-blue-400">How it works?</h1>
+			<div class="flex">
+				<p><span class="text-18 bold-700 text-green-900">1.</span>First generate the codes via your github readme url by pasting it above.</p>
+				<img class='w-screen-1/2 h-screen-1/2 ml-20' src="{{ url_for('static', filename='vector.svg') }}">
+			</div>
+			<p><span class="text-18 bold-700 text-green-800">2.</span> Next, Paste both the happy(like) & unhappy(dislike) codes inside your readme files.</p>
+			<p> <span class="text-18 bold-700 text-green-700">3.</span> Hooray!, setup completed. Now , whenever someone clicks on one of the options the stats gets updated on realtime.</p>
+			<p> <span class="text-18 bold-700 text-green-600">4.</span> Running this service is not free, kindly donate some amount as little as $0.5 so that this will keep running stabily & forever!</p>
+			<p> <span class="text-18 bold-700 text-green-500">5.</span> Absolutely free & works on markdown or paste html code.</p>
+		</div>
+		<div class="flex w-max h-150" style="background-image: url('{{ url_for('static', filename='bg.svg') }}')">
+			<a style="border:2px solid green;" class="text-ff a-0 bold-700 a-link-0 m-auto text-22 p-8" href="https://blog.anicode.in/subscribe-us-abhiprojectz-ckhoslhdg04w6efs1gvksd13b">Subscribe</a>
+			<img class="m-auto" src="{{ url_for('static', filename='news.gif') }}">
+		</div>
+		<!--  	footer				-->
+		<div class="flex-col w-screen-5/6" style="background-image: url('{{ url_for('static', filename='bg.svg') }}')">
+			<p class="m-auto p-20 text-ff">Created by abhi || anicode inc</p>
+			<p class="m-auto text-ff bold-700 mt-10 p-20 p-10"><a class="text-ff a-0" href="https://github.com/abhiprojectz/gitrate"> STAR US ON GITHUB -> </a></p>
+		</div>
+	</body>
+	<script type="text/javascript">
+	function happy() {
+	var input = document.querySelector("#inputparam").value;
+	var hsvg = document.querySelector('#hsvg');
+	var hsvgb = document.querySelector('#hsvgb');
+	var hlink = document.querySelector('#hlink');
+	var target = document.querySelector("#output");
+	var res = input.split('/')[3];
+	var tas = input.split('/')[4];
+	var refid = res + '.' + tas;
+	fetch("{{ url_for('happy') }}", {
+	method: 'POST',
+	headers: {
+	'Content-Type': 'application/json',
+	},
+	body: JSON.stringify({
+	data: refid
+	}),
+	})
+	.then(response => response.text())
+	.then(data => {
+	target.classList.remove("hidden");
+	target.classList.add("flex");
+	hsvgb.classList.add("hidden");
+	hsvg.innerHTML = data;
+	hsvg.classList.remove('hidden');
+	hsvg.classList.add('sl');
+	hlink.value = `[![](https://gitrate.herokuapp.com/happy?ref=` + refid + `)](https://gitrate.herokuapp.com/happy/done?ref=` + refid + `)`;
+	//console.log(data);
+	})
+	.catch((error) => {
+	console.log('Error:', error);
+	});
+	}
+	function unhappy() {
+	var input = document.querySelector("#inputparam").value;
+	var unhsvg = document.querySelector('#unhsvg');
+	var unhsvgb = document.querySelector('#unhsvgb');
+	var unhlink = document.querySelector('#unhlink');
+	var target = document.querySelector("#output");
+	var res = input.split('/')[3];
+	var tas = input.split('/')[4];
+	var refid = res + '.' + tas;
+	fetch("{{ url_for('unhappy') }}", {
+	method: 'POST',
+	headers: {
+	'Content-Type': 'application/json',
+	},
+	body: JSON.stringify({
+	data: refid
+	}),
+	})
+	.then(response => response.text())
+	.then(data => {
+	target.classList.remove("hidden");
+	target.classList.add("flex");
+	unhsvgb.classList.add("hidden");
+	unhsvg.innerHTML = data;
+	unhsvg.classList.remove('hidden');
+	unhsvg.classList.add('sl');
+	unhlink.value = `[![](https://gitrate.herokuapp.com/unhappy?ref=` + refid + `)](https://gitrate.herokuapp.com/unhappy/done?ref=` + refid + `)`;
+	//console.log(data);
+	})
+	.catch((error) => {
+	console.log('Error:', error);
+	});
+	}
+	function copy(data) {
+	if (data === 'tem') {
+	iiid = 'hlink';
+	} else {
+	iiid = 'unhlink';
+	}
+	var copyText = document.getElementById(iiid);
+	copyText.select();
+	copyText.setSelectionRange(0, 99999)
+	document.execCommand("copy");
+	alert("Copied! now go & paste it somewhere..." + copyText.value);
+	}
+	</script>
+</html>
