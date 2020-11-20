@@ -28,7 +28,7 @@ GITRATE contains:
 Actually very few people star your repo, as a open-source developer we all faces it , 
 so in order to overcome this, i decided to create this service as its looks new(at least on github readme repo pages) and there is a greator/higher probabilty poeple may notice it.
 
-You can apply it on any static site eaily just paste the markdown code.
+You can apply it on any static site easily & whenever a user clicks on one of the buttons thier records is updated just paste the markdown code.
 
 Grab it here: [gitrate on heroku](https://gitrate.herokuapp.com/)
 
@@ -59,18 +59,20 @@ If you want to join my(i'm a student) team then, DM on [twitter](https://twitter
 
 # View my more projects
 
-Integrate CSS/JS animations right through data-attributes - [motionia](https://anicode.in/motionia)
-CSS based animations utility engine - [mojania](https://anicode.in/) - (comming witin a week)
+Integrate CSS/JS animations right through data-attributes -> [motionia](https://anicode.in/motionia)
+
+CSS based animations utility engine -> [mojania](https://anicode.in/) - (comming witin a week)
 
 
 # Behind gitrate
 
 It is possible because of:
-	- Python
-	- css
-	- html
-	- javascript
++ Python
++ css
++ html
++ javascript
 
+For more latest updates [subscribe us!](https://blog.anicode.in/subscribe-us-abhiprojectz-ckhoslhdg04w6efs1gvksd13b)
 
 
 Thanks 
