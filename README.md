@@ -8,9 +8,9 @@ This is very simple and easy to integerate across any site/browsers, all you nee
 
 <p align='center'>
 
-[![](https://gitrate.herokuapp.com/happy?ref=abhiprojectz.motionia)](https://gitrate.herokuapp.com/happy/done?ref=abhiprojectz.motionia)
+[![](https://gitrate.herokuapp.com/happy?ref=abhiprojectz.gitrate)](https://gitrate.herokuapp.com/happy/done?ref=abhiprojectz.gitrate)
 
-[![](https://gitrate.herokuapp.com/unhappy?ref=abhiprojectz.motionia)](https://gitrate.herokuapp.com/unhappy/done?ref=abhiprojectz.motionia)
+[![](https://gitrate.herokuapp.com/unhappy?ref=abhiprojectz.gitrate)](https://gitrate.herokuapp.com/unhappy/done?ref=abhiprojectz.gitrate)
 </p>
 
 GITRATE contains:
@@ -50,7 +50,13 @@ Its way simple:
 + 3. Copy the markdown codes.
 + 4. Paste it wherever you want!
 
+Alternatively, you can generate url via urself just set `ref` param as (username).(repoName) without paranthies`()` like: `abhiprojectz.gitrate`
+
+so our url becomes: `[![](https://gitrate.herokuapp.com/happy?ref=abhiprojectz.gitrate)](https://gitrate.herokuapp.com/happy/done?ref=abhiprojectz.gitrate)`
+
 If you want you can insert using  html attribute to `<img src=''>`.
+
+> Note: please free to contriute.
 
 # Support us 
 
