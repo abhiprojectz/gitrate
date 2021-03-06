@@ -58,16 +58,10 @@ If you want you can insert using  html attribute to `<img src=''>`.
 
 > Note: please free to contriute.
 
-# Support us 
-
-You can support us by giving it a star, share and contributing.
-If you want to join my(i'm a student) team then, DM on [twitter](https://twitter.com/abhiprojectz) inorder to get a slack workspace invitation.
 
 # View my more projects
 
 Integrate CSS/JS animations right through data-attributes -> [motionia](https://anicode.in/motionia)
-
-CSS based animations utility engine -> [mojania](https://anicode.in/) - (comming witin a week)
 
 
 # Behind gitrate
@@ -77,9 +71,6 @@ It is possible because of:
 + css
 + html
 + javascript
-
-For more latest updates [subscribe us!](https://blog.anicode.in/subscribe-us-abhiprojectz-ckhoslhdg04w6efs1gvksd13b)
-
 
 Thanks 
 
